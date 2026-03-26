@@ -1,0 +1,240 @@
+.inputGroup {
+  margin-bottom: 12px;
+}
+
+.inputGroup:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #46962b;
+}
+
+.textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #46962b;
+}
+
+/* Agenda Items */
+.agendaItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agendaItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.agendaLabel {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.agendaText {
+  flex: 1;
+}
+
+.agendaRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.agendaRemove:hover {
+  background-color: #fee;
+  color: #d32f2f;
+}
+
+.addAgendaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  background-color: #f8f8f8;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addAgendaItem:hover {
+  background-color: #e8f5e3;
+  border-color: #46962b;
+  color: #46962b;
+}
+
+/* Hint-Text unter Eingabefeldern */
+.hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Preview-Darstellungen */
+.headerPreview {
+  background-color: #1c302a;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+}
+
+.headerSubtitle {
+  font-size: 13px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.highlightPreview {
+  background-color: #f0f9eb;
+  border-left: 4px solid #46962b;
+  padding: 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlightTitle {
+  color: #46962b;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.warningPreview {
+  background-color: #fffce6;
+  border: 1px solid #e3d65b;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.warningTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.buttonPreview {
+  text-align: center;
+  padding: 12px;
+}
+
+.buttonTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.buttonDescription {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #46962b;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.signaturePreview {
+  padding: 8px 0;
+}
+
+.greeting {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.closingText {
+  margin: 0;
+  font-size: 14px;
+}
+
+.names {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+.footerPreview {
+  background-color: #333;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.footerPreview .additionalInfo {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.dividerPreview {
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+}
+
+.textPreview {
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
