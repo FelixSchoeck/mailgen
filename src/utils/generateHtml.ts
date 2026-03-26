@@ -195,19 +195,26 @@ function generateElementHtml(element: MailElement): string {
 export function generateMailHtml(document: MailDocument): string {
   const elementsHtml = document.elements.map(generateElementHtml).join('\n');
 
+  // Open Sans ist Open Source (SIL Open Font License) und in den meisten Mail-Clients verfügbar
+  // Falls nicht, wird auf Arial/sans-serif zurückgefallen
+  const fontFamily = "'Open Sans', Arial, sans-serif";
+
   return `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${document.name}</title>
+  <!--[if !mso]><!-->
+  <link href="https://fonts.bunny.net/css?family=open-sans:400,400i,600,700" rel="stylesheet" />
+  <!--<![endif]-->
   <style type="text/css">
 ${mailTemplateCss}
   </style>
 </head>
 <body>
-  <div style="font-size: 12pt; font-family: Arial,Helvetica,sans-serif;">
-    <div class="v1ov-mail-wrapper" style="margin: 0; padding: 0; background-color: ${colors.background}; font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <div style="font-size: 12pt; font-family: ${fontFamily};">
+    <div class="v1ov-mail-wrapper" style="margin: 0; padding: 0; background-color: ${colors.background}; font-family: ${fontFamily}; -webkit-font-smoothing: antialiased;">
       <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; width: 100%;">
         <tbody>
           <tr>

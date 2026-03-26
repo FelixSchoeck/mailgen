@@ -1,10 +1,11 @@
 // Mail-Template CSS als String für den HTML-Export
+// Verwendet Open Sans (Open Source, SIL Open Font License)
 export const mailTemplateCss = `
 .v1ov-mail-wrapper {
   margin: 0;
   padding: 0;
   background-color: #F5F1E9;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
