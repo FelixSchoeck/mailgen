@@ -1,4 +1,5 @@
 import type { HighlightBoxElement as HighlightBoxElementType } from '../../types';
+import { RichTextEditor } from '../common';
 import styles from '../../styles/elements.module.css';
 
 interface Props {
@@ -21,11 +22,10 @@ export function HighlightBoxElement({ element, onChange }: Props) {
       </div>
       <div className={styles.inputGroup}>
         <label className={styles.label}>Inhalt</label>
-        <textarea
-          className={styles.textarea}
+        <RichTextEditor
           value={element.content}
-          onChange={(e) => onChange({ content: e.target.value })}
-          placeholder="**Wann:** Montag, 15.04.2024 um 19:00 Uhr&#10;**Wo:** Gemeindehaus, Musterstraße 1"
+          onChange={(content) => onChange({ content })}
+          placeholder="**Wann:** Montag, 15.04.2024 um 19:00 Uhr"
           rows={4}
         />
       </div>

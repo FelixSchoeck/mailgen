@@ -14,10 +14,55 @@ import { mailTemplateCss, colors } from '../styles/mailTemplate';
 
 // Konvertiert einfache Markdown-Syntax zu HTML
 function simpleMarkdown(text: string): string {
-  return text
+  let result = text;
+  
+  // Aufzählungen (• oder - am Zeilenanfang)
+  const lines = result.split('\n');
+  let inList = false;
+  const processedLines: string[] = [];
+  
+  for (const line of lines) {
+    const bulletMatch = line.match(/^[•\-\*]\s+(.+)$/);
+    const numberedMatch = line.match(/^\d+\.\s+(.+)$/);
+    
+    if (bulletMatch) {
+      if (!inList) {
+        processedLines.push('<ul style="margin: 10px 0; padding-left: 20px;">');
+        inList = true;
+      }
+      processedLines.push(`<li style="margin-bottom: 5px;">${bulletMatch[1]}</li>`);
+    } else if (numberedMatch) {
+      if (!inList) {
+        processedLines.push('<ol style="margin: 10px 0; padding-left: 20px;">');
+        inList = true;
+      }
+      processedLines.push(`<li style="margin-bottom: 5px;">${numberedMatch[1]}</li>`);
+    } else {
+      if (inList) {
+        // Schließe Liste wenn vorher eine war
+        processedLines.push(processedLines[processedLines.length - 1]?.includes('<ol') ? '</ol>' : '</ul>');
+        inList = false;
+      }
+      processedLines.push(line);
+    }
+  }
+  
+  if (inList) {
+    processedLines.push('</ul>');
+  }
+  
+  result = processedLines.join('\n');
+  
+  // Text-Formatierung
+  result = result
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/\n/g, '<br />');
+    .replace(/<u>(.+?)<\/u>/g, '<span style="text-decoration: underline;">$1</span>');
+  
+  // Zeilenumbrüche (aber nicht in Listen)
+  result = result.replace(/\n(?!<)/g, '<br />');
+  
+  return result;
 }
 
 // Generiert HTML für ein einzelnes Element

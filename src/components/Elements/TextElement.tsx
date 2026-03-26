@@ -1,4 +1,5 @@
 import type { TextElement as TextElementType } from '../../types';
+import { RichTextEditor } from '../common';
 import styles from '../../styles/elements.module.css';
 
 interface Props {
@@ -11,16 +12,12 @@ export function TextElement({ element, onChange }: Props) {
     <div>
       <div className={styles.inputGroup}>
         <label className={styles.label}>Text</label>
-        <textarea
-          className={styles.textarea}
+        <RichTextEditor
           value={element.content}
-          onChange={(e) => onChange({ content: e.target.value })}
-          placeholder="Gib deinen Text ein...&#10;&#10;**fett** und *kursiv* werden unterstützt."
+          onChange={(content) => onChange({ content })}
+          placeholder="Gib deinen Text ein..."
           rows={4}
         />
-        <div className={styles.hint}>
-          Formatierung: **fett**, *kursiv*
-        </div>
       </div>
     </div>
   );

@@ -105,15 +105,17 @@ export function ElementList({
             key={element.id}
             className={`${styles.elementCard} ${isSelected ? styles.selected : ''}`}
             onClick={() => onSelectElement(element.id)}
-            draggable
-            onDragStart={() => handleDragStart(index)}
-            onDragEnter={() => handleDragEnter(index)}
-            onDragEnd={handleDragEnd}
-            onDragOver={(e) => e.preventDefault()}
           >
-            <div className={styles.elementCardHeader}>
+            <div 
+              className={styles.elementCardHeader}
+              draggable
+              onDragStart={() => handleDragStart(index)}
+              onDragEnter={() => handleDragEnter(index)}
+              onDragEnd={handleDragEnd}
+              onDragOver={(e) => e.preventDefault()}
+            >
               <div className={styles.elementCardTitle}>
-                <span>☰</span>
+                <span style={{ cursor: 'grab' }}>☰</span>
                 <span>{meta?.icon}</span>
                 <span>{meta?.label}</span>
               </div>

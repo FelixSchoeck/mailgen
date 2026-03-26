@@ -1,4 +1,5 @@
 import type { WarningBoxElement as WarningBoxElementType } from '../../types';
+import { RichTextEditor } from '../common';
 import styles from '../../styles/elements.module.css';
 
 interface Props {
@@ -21,11 +22,10 @@ export function WarningBoxElement({ element, onChange }: Props) {
       </div>
       <div className={styles.inputGroup}>
         <label className={styles.label}>Inhalt</label>
-        <textarea
-          className={styles.textarea}
+        <RichTextEditor
           value={element.content}
-          onChange={(e) => onChange({ content: e.target.value })}
-          placeholder="Um allen genügend Raum zu geben:&#10;• 3 Minuten für Redebeiträge&#10;• 1 Minute pro Diskussionsbeitrag"
+          onChange={(content) => onChange({ content })}
+          placeholder="Um allen genügend Raum zu geben..."
           rows={4}
         />
       </div>

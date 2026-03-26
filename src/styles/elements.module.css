@@ -23,6 +23,7 @@
   font-size: 14px;
   font-family: inherit;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 
 .input:focus {
@@ -40,11 +41,81 @@
   resize: vertical;
   min-height: 80px;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 
 .textarea:focus {
   outline: none;
   border-color: #46962b;
+}
+
+/* Rich Text Editor */
+.richTextEditor {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.richTextEditor:focus-within {
+  border-color: #46962b;
+}
+
+.formatToolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.formatButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.15s;
+}
+
+.formatButton:hover {
+  background-color: #e8f5e3;
+  border-color: #46962b;
+  color: #46962b;
+}
+
+.formatButton:active {
+  background-color: #d0ebc5;
+}
+
+.formatDivider {
+  width: 1px;
+  height: 20px;
+  background-color: #ddd;
+  margin: 0 6px;
+}
+
+.richTextarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.richTextarea:focus {
+  outline: none;
 }
 
 /* Agenda Items */
